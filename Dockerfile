@@ -1,4 +1,4 @@
-FROM fedora:23
+FROM fedora:latest
 MAINTAINER Krishna Kumar <kks32@cam.ac.uk>
 
 # Dependencies
