@@ -17,3 +17,9 @@
 
 * The docker image can be used directly from the Docker Hub
 * To launch the `cbgeo/ca-abm`  docker container, run `docker run -ti cbgeo/ca-abm:latest /bin/bash`
+
+## Run the container with local volume mounted
+* `docker run -ti -v /home/<user>/<mounted-folder>/:/<path-in-container> cbgeo/ca-abm:latest /bin/bash`
+
+## Exposing ports
+* To connect to a particular port (for e.g., 3000) in docker container to port `3000` in localhost: `docker run -ti -p 3000:3000 cbgeo/ca-abm`

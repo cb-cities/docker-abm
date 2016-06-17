@@ -37,5 +37,14 @@ RUN curl --silent -O https://www.haskell.org/cabal/release/cabal-install-1.22.2.
   && rm -rf /usr/src/cabal \
   && cabal --version
 
+# NodeJS and NPM
+RUN dnf install -y npm nodejs
+RUN npm install -g n
+RUN n stable
+
+# Install Elm and Purescript
+RUN npm install -g purescript
+RUN npm install -g elm@0.16
+ 
 # Done
 WORKDIR /root
