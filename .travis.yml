@@ -1,0 +1,17 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t "cbgeo/ca-abm" ./
+  - docker run -ti cbgeo/ca-abm /bin/bash -c "cd /home/caabm/research"
+  - docker ps -a
+
+script:
+  - echo "Built success"
+
+notifications:
+    slack: cb-transport:Emaxhe0Jb2jsIaFuj4nvbLTy
