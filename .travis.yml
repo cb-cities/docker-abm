@@ -7,7 +7,7 @@ services:
 
 before_install:
   - docker build -t "cbgeo/ca-abm" ./
-  - docker run -ti cbgeo/ca-abm /bin/bash -c "cd /home/caabm/research"
+  - docker run -ti cbgeo/ca-abm /bin/bash -c "cd /"
   - docker ps -a
 
 script:
