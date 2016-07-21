@@ -1,8 +1,8 @@
-FROM fedora:latest
+FROM fedora:23
 MAINTAINER Krishna Kumar <kks32@cam.ac.uk>
 
 # Dependencies
-RUN dnf install -y bzip2 gcc git gmp-devel make perl tar which zlib zlib-devel
+RUN dnf install -y bzip2 gcc git gmp-devel make perl tar which zlib zlib-devel findutils
 
 # Create a softlink for libgmp.so.3
 RUN ln -s /usr/lib64/libgmp.so  /usr/lib64/libgmp.so.3 
@@ -36,6 +36,9 @@ RUN curl --silent -O https://www.haskell.org/cabal/release/cabal-install-1.22.2.
   && rm -rf /root/.cabal \
   && rm -rf /usr/src/cabal \
   && cabal --version
+
+RUN dnf install -y cabal-install
+
 
 # NodeJS and NPM
 RUN dnf install -y npm nodejs
