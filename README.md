@@ -1,22 +1,26 @@
 # Docker image for CA-ABM
 > Krishna Kumar
 
-[Docker image](https://hub.docker.com/r/cbgeo/ca-abm/)
+
+[![Docker image](https://img.shields.io/badge/docker--image-cbgeo--ca--abm-ff69b4.svg)](https://quay.io/repository/cbgeo/ca-abm)
+[![Docker Repository on Quay](https://quay.io/repository/cbgeo/ca-abm/status "Docker Repository on Quay")](https://quay.io/repository/cbgeo/ca-abm)
+[![Build status](https://api.travis-ci.org/cb-geo/docker-abm.svg)](https://api.travis-ci.org/cb-geo/docker-abm.svg)
+[![Docker hub](https://img.shields.io/badge/docker--hub-cbgeo--ca--abm-ff69b4.svg)](https://hub.docker.com/r/cbgeo/ca-abm/)
 
 ## Tools
-* GHC 7.10.3
-* Cabal 1.22.2
-* GCC 5.3.1
+* GHC 8.0.1
+* Cabal 1.24
+* GCC 6
+* Node 6.3.1
 
 # Creating an image from the docker file
-
-* To build an image from docker file run as root `docker build -t "cbgeo/ca-abm:v0.1" /path/to/Dockerfile`
+* To build an image from docker file run as root `docker build -t "cbgeo/ca-abm:latest" /path/to/Dockerfile`
 * `docker history` will show you the effect of each command has on the overall size of the file.
 
-# Use the docker image
-
-* The docker image can be used directly from the Docker Hub
-* To launch the `cbgeo/ca-abm`  docker container, run `docker run -ti cbgeo/ca-abm:latest /bin/bash`
+# Using the docker image
+* The docker image can be used directly from the Docker Hub or Quay.io
+* Pull the docker image `docker pull cbgeo/ca-abm` or `docker pull quay.io/cbgeo/ca-abm`
+* To launch the `cbgeo/ca-abm`  docker container, run `docker run -ti cbgeo/ca-abm:latest /bin/bash` or `docker run -ti quay.io/cbgeo/ca-abm:latest /bin/bash`
 
 ## Run the container with local volume mounted
 * `docker run -ti -v /home/<user>/<mounted-folder>/:/<path-in-container> cbgeo/ca-abm:latest /bin/bash`
